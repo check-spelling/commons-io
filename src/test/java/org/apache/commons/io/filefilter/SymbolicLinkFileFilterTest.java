@@ -56,8 +56,8 @@ public class SymbolicLinkFileFilterTest {
     private static Path targetDirPath; // hard directory Path
     private static Path testLinkDirPath; // symbolic link to hardDirectory
     private static File testLinkDirFile;
-    private static File missingFileFile; // non-existent file
-    private static Path missingFilePath; // non-existent file
+    private static File missingFileFile; // nonexistent file
+    private static Path missingFilePath; // nonexistent file
     private static SymbolicLinkFileFilter filter;
 
     // Mock filter for testing on Windows.

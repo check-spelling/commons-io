@@ -44,7 +44,7 @@ public class PathUtilsContentEqualsTest {
 
     @Test
     public void testDirectoryAndFileContentEquals() throws Exception {
-        // Non-existent files
+        // Nonexistent files
         final Path path1 = new File(temporaryFolder, getName()).toPath();
         final Path path2 = new File(temporaryFolder, getName() + "2").toPath();
         assertTrue(PathUtils.directoryAndFileContentEquals(null, null));
@@ -100,7 +100,7 @@ public class PathUtilsContentEqualsTest {
 
     @Test
     public void testDirectoryContentEquals() throws Exception {
-        // Non-existent files
+        // Nonexistent files
         final Path path1 = new File(temporaryFolder, getName()).toPath();
         final Path path2 = new File(temporaryFolder, getName() + "2").toPath();
         assertTrue(PathUtils.directoryContentEquals(null, null));
@@ -156,7 +156,7 @@ public class PathUtilsContentEqualsTest {
 
     @Test
     public void testFileContentEquals() throws Exception {
-        // Non-existent files
+        // Nonexistent files
         final Path path1 = new File(temporaryFolder, getName()).toPath();
         final Path path2 = new File(temporaryFolder, getName() + "2").toPath();
         assertTrue(PathUtils.fileContentEquals(null, null));
