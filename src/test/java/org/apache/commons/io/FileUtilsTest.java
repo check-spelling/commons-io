@@ -645,7 +645,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
     @Test
     public void testContentEquals() throws Exception {
-        // Non-existent files
+        // Nonexistent files
         final File file = new File(tempDirFile, getName());
         final File file2 = new File(tempDirFile, getName() + "2");
         assertTrue(FileUtils.contentEquals(null, null));
@@ -696,7 +696,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
     @Test
     public void testContentEqualsIgnoreEOL() throws Exception {
-        // Non-existent files
+        // Nonexistent files
         final File file1 = new File(tempDirFile, getName());
         final File file2 = new File(tempDirFile, getName() + "2");
         assertTrue(FileUtils.contentEqualsIgnoreEOL(null, null, null));
@@ -1546,7 +1546,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
         testFile.delete();
 
-        // Tests with non-existent directory
+        // Tests with nonexistent directory
         FileUtils.forceMkdir(testFile);
         assertTrue(testFile.exists(), "Directory was not created.");
 
@@ -2101,7 +2101,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
     public void testMoveDirectory_Errors() throws Exception {
         assertThrows(NullPointerException.class, () -> FileUtils.moveDirectory(null, new File("foo")));
         assertThrows(NullPointerException.class, () -> FileUtils.moveDirectory(new File("foo"), null));
-        assertThrows(FileNotFoundException.class, () -> FileUtils.moveDirectory(new File("nonexistant"), new File("foo")));
+        assertThrows(FileNotFoundException.class, () -> FileUtils.moveDirectory(new File("nonexistent"), new File("foo")));
 
         final File testFile = new File(tempDirFile, "testMoveDirectoryFile");
         if (!testFile.getParentFile().exists()) {
@@ -2201,8 +2201,8 @@ public class FileUtilsTest extends AbstractTempDirTest {
         }
         assertThrows(IOException.class, () -> FileUtils.moveDirectoryToDirectory(testFile1, testFile2, true));
 
-        final File nonexistant = new File(tempDirFile, "testMoveFileNonExistant");
-        assertThrows(IOException.class, () -> FileUtils.moveDirectoryToDirectory(testFile1, nonexistant, false));
+        final File nonexistent = new File(tempDirFile, "testMoveFileNonExistant");
+        assertThrows(IOException.class, () -> FileUtils.moveDirectoryToDirectory(testFile1, nonexistent, false));
     }
 
     @Test
@@ -2316,7 +2316,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
     public void testMoveFile_Errors() throws Exception {
         assertThrows(NullPointerException.class, () -> FileUtils.moveFile(null, new File("foo")));
         assertThrows(NullPointerException.class, () -> FileUtils.moveFile(new File("foo"), null));
-        assertThrows(FileNotFoundException.class, () -> FileUtils.moveFile(new File("nonexistant"), new File("foo")));
+        assertThrows(FileNotFoundException.class, () -> FileUtils.moveFile(new File("nonexistent"), new File("foo")));
         assertThrows(IllegalArgumentException.class, () -> FileUtils.moveFile(tempDirFile, new File("foo")));
         final File testSourceFile = new File(tempDirFile, "testMoveFileSource");
         final File testDestFile = new File(tempDirFile, "testMoveFileSource");
@@ -2384,8 +2384,8 @@ public class FileUtilsTest extends AbstractTempDirTest {
         }
         assertThrows(IllegalArgumentException.class, () -> FileUtils.moveFileToDirectory(testFile1, testFile2, true));
 
-        final File nonexistant = new File(tempDirFile, "testMoveFileNonExistant");
-        assertThrows(IOException.class, () -> FileUtils.moveFileToDirectory(testFile1, nonexistant, false));
+        final File nonexistent = new File(tempDirFile, "testMoveFileNonExistant");
+        assertThrows(IOException.class, () -> FileUtils.moveFileToDirectory(testFile1, nonexistent, false));
     }
 
     @Test
@@ -2426,9 +2426,9 @@ public class FileUtilsTest extends AbstractTempDirTest {
     public void testMoveToDirectory_Errors() throws Exception {
         assertThrows(NullPointerException.class, () -> FileUtils.moveDirectoryToDirectory(null, new File("foo"), true));
         assertThrows(NullPointerException.class, () -> FileUtils.moveDirectoryToDirectory(new File("foo"), null, true));
-        final File nonexistant = new File(tempDirFile, "nonexistant");
+        final File nonexistent = new File(tempDirFile, "nonexistent");
         final File destDir = new File(tempDirFile, "MoveToDirectoryDestDir");
-        assertThrows(IOException.class, () -> FileUtils.moveToDirectory(nonexistant, destDir, true), "Expected IOException when source does not exist");
+        assertThrows(IOException.class, () -> FileUtils.moveToDirectory(nonexistent, destDir, true), "Expected IOException when source does not exist");
 
     }
 
@@ -2484,7 +2484,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
         // Null argument
         assertThrows(NullPointerException.class, () -> FileUtils.sizeOf(null));
 
-        // Non-existent file
+        // Nonexistent file
         assertThrows(IllegalArgumentException.class, () -> FileUtils.sizeOf(file));
 
         // Creates file
@@ -2507,7 +2507,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
         // Null argument
         assertThrows(NullPointerException.class, () -> FileUtils.sizeOfAsBigInteger(null));
-        // Non-existent file
+        // Nonexistent file
         assertThrows(IllegalArgumentException.class, () -> FileUtils.sizeOfAsBigInteger(file));
 
         // Creates file
@@ -2539,7 +2539,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
         // Null argument
         assertThrows(NullPointerException.class, () -> FileUtils.sizeOfDirectory(null));
-        // Non-existent file
+        // Nonexistent file
         assertThrows(IllegalArgumentException.class, () -> FileUtils.sizeOfAsBigInteger(file));
 
         // Creates file
@@ -2571,7 +2571,7 @@ public class FileUtilsTest extends AbstractTempDirTest {
 
         // Null argument
         assertThrows(NullPointerException.class, () -> FileUtils.sizeOfDirectoryAsBigInteger(null));
-        // Non-existent file
+        // Nonexistent file
         assertThrows(IllegalArgumentException.class, () -> FileUtils.sizeOfDirectoryAsBigInteger(file));
 
         // Creates file

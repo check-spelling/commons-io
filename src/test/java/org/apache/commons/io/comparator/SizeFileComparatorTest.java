@@ -95,9 +95,9 @@ public class SizeFileComparatorTest extends ComparatorAbstractTest {
      * Test a file which doesn't exist.
      */
     @Test
-    public void testNonexistantFile() {
-        final File nonexistantFile = new File(FileUtils.current(), "nonexistant.txt");
-        assertFalse(nonexistantFile.exists());
-        assertTrue(comparator.compare(nonexistantFile, moreFile) < 0, "less");
+    public void testNonexistentFile() {
+        final File nonexistentFile = new File(FileUtils.current(), "nonexistent.txt");
+        assertFalse(nonexistentFile.exists());
+        assertTrue(comparator.compare(nonexistentFile, moreFile) < 0, "less");
     }
 }
